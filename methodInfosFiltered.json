@@ -1,0 +1,63 @@
+{
+	"magicbook.On_Received_SpellBookPickedUp": {
+		"methodName": "__0_On_Received_SpellBookPickedUp",
+		"parameters": [
+			"__0_castingPlayer__param",
+			"__0_bookId__param"
+		]
+	},
+	"magicbook.On_Received_SpellBookDropped": {
+		"methodName": "__0_On_Received_SpellBookDropped",
+		"parameters": [
+			"__1_castingPlayer__param",
+			"__1_bookId__param"
+		]
+	},
+	"magicbook.On_Received_SpellBeginFire": {
+		"methodName": "__0_On_Received_SpellBeginFire",
+		"parameters": [
+			"__2_castingPlayer__param",
+			"__2_bookId__param"
+		]
+	},
+	"magicbook.On_Received_SpellEndFire": {
+		"methodName": "__0_On_Received_SpellEndFire",
+		"parameters": [
+			"__3_castingPlayer__param",
+			"__3_bookId__param"
+		]
+	},
+	"old_faucet_interactable.On_ActivateRequestReceived": {
+		"methodName": "__0_On_ActivateRequestReceived",
+		"parameters": [
+			"__0_id__param"
+		]
+	},
+	"old_faucet_interactable.On_DeactivateRequestReceived": {
+		"methodName": "__0_On_DeactivateRequestReceived",
+		"parameters": [
+			"__1_id__param"
+		]
+	},
+	"wine_tankard_interactable.On_RefillRequestReceived": {
+		"methodName": "__0_On_RefillRequestReceived",
+		"parameters": [
+			"__0_id__param"
+		]
+	},
+	"wine_tankard_interactable.On_DrinkRequestReceived": {
+		"methodName": "__0_On_DrinkRequestReceived",
+		"parameters": [
+			"__1_id__param",
+			"__0_nextFillLevel__param"
+		]
+	},
+	"Wizard_NPC.Notify_SetTargetPosition": {
+		"methodName": "__0_Notify_SetTargetPosition",
+		"parameters": [
+			"__0_requestingPlayer__param",
+			"__0_targetPosition__param",
+			"__0_id__param"
+		]
+	}
+}
