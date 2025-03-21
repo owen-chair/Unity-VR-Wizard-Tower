@@ -23,12 +23,12 @@ public class candle_lod : UdonSharpBehaviour
     {
         if (this.m_LodFlame == null)
         {
-            Debug.LogError("candle_lod: m_LodFlame is not set");
+            Debug.LogError("[candle_lod.cs] SetDefaultState: m_LodFlame is not set");
         }
 
         if (this.m_ParticleFlame == null)
         {
-            Debug.LogError("candle_lod: m_ParticleFlame is not set");
+            Debug.LogError("[candle_lod.cs] SetDefaultState: m_ParticleFlame is not set");
         }
 
         this.m_LodFlame.SetActive(true);
@@ -37,6 +37,9 @@ public class candle_lod : UdonSharpBehaviour
 
     public override void OnPlayerTriggerEnter(VRCPlayerApi player)
     {
+        if (player == null) return;
+        if (!player.isLocal) return;
+
         base.OnPlayerTriggerEnter(player);
 
         this.m_LodFlame.SetActive(false);
@@ -45,6 +48,9 @@ public class candle_lod : UdonSharpBehaviour
 
     public override void OnPlayerTriggerExit(VRCPlayerApi player)
     {
+        if (player == null) return;
+        if (!player.isLocal) return;
+
         base.OnPlayerTriggerExit(player);
 
         this.m_LodFlame.SetActive(true);

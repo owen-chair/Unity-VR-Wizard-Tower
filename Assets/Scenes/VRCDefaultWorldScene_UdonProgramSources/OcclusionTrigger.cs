@@ -65,12 +65,18 @@ public class OcclusionTrigger : UdonSharpBehaviour
 
     public override void OnPlayerTriggerEnter(VRCPlayerApi player)
     {
+        if (player == null) return;
+        if (!player.isLocal) return;
+
         base.OnPlayerTriggerEnter(player);
         this.ActivateOccludees();
     }
 
     public override void OnPlayerTriggerExit(VRCPlayerApi player)
     {
+        if (player == null) return;
+        if (!player.isLocal) return;
+
         base.OnPlayerTriggerExit(player);
         this.DeactivateOccludees();
     }
