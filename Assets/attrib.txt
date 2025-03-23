@@ -30,3 +30,6 @@ desk - Alf Does Stuff @ sketchfab
 drawer - SrMsantG @ sketchfab
 coathanger - plaggy @ sketchfab
 wall break sound - LordSonny @ pixabay
+teleport sound - freesound_community @ pixabay
+water splash sound - Universfield @ pixabay
+skeleton - LasquetiSpice @ pixabay

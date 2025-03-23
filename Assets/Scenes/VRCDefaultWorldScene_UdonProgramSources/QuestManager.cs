@@ -92,6 +92,18 @@ public class QuestManager : UdonSharpBehaviour
             SendCustomEventDelayedSeconds(nameof(this.WALL_SMASH), delay);
             return;
         }
+
+        if (token == "START_SKULL_QUEST")
+        {
+            SendCustomEventDelayedSeconds(nameof(this.OnStartSkullQuest), delay);
+            return;
+        }
+
+        if (token == "RETURN_SKULL_TO_STATUE")
+        {
+            SendCustomEventDelayedSeconds(nameof(this.BeginReturnSkull), delay);
+            return;
+        }
     }
 
     public void TP_TO_JAIL()
@@ -257,6 +269,296 @@ public class QuestManager : UdonSharpBehaviour
         if (this.m_JailSkeletonSpellBall != null)
         {
             Destroy(this.m_JailSkeletonSpellBall);
+        }
+    }
+
+
+    public Wizard_NPC m_StatueNPCObject;
+    public bool m_IsSkullQuestActive = false;
+    public void OnStartSkullQuest()
+    {
+        this.m_IsSkullQuestActive = true;
+        this.m_StatueNPCObject.DisableInteractive = true;
+    }
+
+    public GameObject m_CoffinLid;
+    public VRCPickup m_CoffinLidPickup;
+
+    public GameObject m_HeadlessSkeletonMainGameObject;
+    public DialogueManager m_HeadlessSkeleton_DialogueManager;
+
+    public GameObject m_HeadlessSkeletonEntranceEffectGameObject;
+    public ParticleSystem m_HeadlessSkeletonEnranceEffectParticleSystem;
+
+    public AudioSource m_SkeletonAppearSoundEffect;
+
+    public Transform m_SkeletonEncounterTeleportCube;
+
+    public Wizard_NPC m_HeadlessSkeleton_NpcObject;
+    public GameObject m_SkullGameObject;
+    public GameObject m_SkullGameObjectParent;
+    public VRCPickup m_SkullPickup;
+
+    public void OnHeadlessSkeletonTriggered()
+    {
+
+        if (this.m_HeadlessSkeletonEntranceEffectGameObject == null)
+        {
+            Debug.LogError("[QuestManager.cs] OnHeadlessSkeletonTriggered: m_HeadlessSkeletonEntranceEffectGameObject is not set");
+            return;
+        }
+
+        if (this.m_HeadlessSkeletonEnranceEffectParticleSystem == null)
+        {
+            Debug.LogError("[QuestManager.cs] OnHeadlessSkeletonTriggered: m_HeadlessSkeletonEnranceEffectParticleSystem is not set");
+            return;
+        }
+
+        if (this.m_SkeletonAppearSoundEffect != null && !this.m_SkeletonAppearSoundEffect.isPlaying)
+        {
+            this.m_SkeletonAppearSoundEffect.Play();
+        }
+
+        this.m_HeadlessSkeletonEntranceEffectGameObject.SetActive(true);
+        this.m_HeadlessSkeletonEnranceEffectParticleSystem.Play();
+
+        if (this.m_HeadlessSkeletonMainGameObject == null)
+        {
+            Debug.LogError("[QuestManager.cs] OnHeadlessSkeletonTriggered: m_HeadlessSkeletonMainGameObject is not set");
+            return;
+        }
+
+        this.m_HeadlessSkeletonMainGameObject.SetActive(true);
+
+        if (this.m_SkeletonEncounterTeleportCube == null)
+        {
+            Debug.LogError("[QuestManager.cs] OnHeadlessSkeletonTriggered: m_SkeletonEncounterTeleportCube is not set");
+            return;
+        }
+
+        this.TeleportTo(this.m_SkeletonEncounterTeleportCube);
+
+        SendCustomEventDelayedSeconds(nameof(this.AfterEntranceEffectFinished), 1.5f);
+    }
+
+    public void AfterEntranceEffectFinished()
+    {
+        if (this.m_HeadlessSkeleton_NpcObject == null)
+        {
+            Debug.LogError("[QuestManager.cs] AfterEntranceEffectFinished: m_HeadlessSkeleton_NpcObject is not set");
+            return;
+        }
+
+        if (this.m_HeadlessSkeleton_DialogueManager == null)
+        {
+            Debug.LogError("[QuestManager.cs] AfterEntranceEffectFinished: m_HeadlessSkeleton_DialogueManager is not set");
+            return;
+        }
+
+        this.m_HeadlessSkeleton_DialogueManager.StartDialogue();
+    }
+
+    public bool m_IsReturnSkullQuestActive = false;
+    public void BeginReturnSkull()
+    {
+        Debug.Log("[QuestManager.cs] BeginReturnSkull");
+        this.m_IsReturnSkullQuestActive = true;
+    }
+
+    public Transform m_SkullPlace;
+    public void OnSkullReturned()
+    {
+        if (!this.m_IsSkullQuestActive) return;
+        if (!this.m_IsReturnSkullQuestActive) return;
+
+        this.m_IsSkullQuestActive = false;
+        this.m_IsReturnSkullQuestActive = false;
+
+        if (this.m_SkullPickup == null)
+        {
+            Debug.LogError("[QuestManager.cs] OnSkullReturned: m_SkullPickup is not set");
+            return;
+        }
+
+        if (this.m_SkullGameObjectParent == null)
+        {
+            Debug.LogError("[QuestManager.cs] OnTransition: m_SkullGameObjectParent is not set");
+            return;
+        }
+
+        if (this.m_SkullPlace == null)
+        {
+            Debug.LogError("[QuestManager.cs] OnSkullReturned: m_SkullPlace is not set");
+            return;
+        }
+
+        this.m_SkullPickup.Drop();
+        this.m_SkullPickup.pickupable = false;
+
+
+        this.m_CurrentExtraDialogueSoundIndex = 0;
+        this.PlayStatueExtraDialogueSound();
+    }
+
+    private int m_CurrentExtraDialogueSoundIndex;
+
+    public AudioSource[] m_StatueSounds;
+    public void PlayStatueExtraDialogueSound()
+    {
+        if (this.m_StatueSounds == null)
+        {
+            Debug.LogError("[QuestManager.cs] PlayStatueSound: m_StatueSounds is not set");
+            return;
+        }
+
+        if (this.m_CurrentExtraDialogueSoundIndex >= 0 && this.m_CurrentExtraDialogueSoundIndex <= 7)
+        {
+            if (this.m_StatueSounds[this.m_CurrentExtraDialogueSoundIndex] != null)
+            {
+                this.m_StatueSounds[this.m_CurrentExtraDialogueSoundIndex].Play();
+                Debug.Log("[QuestManager.cs] PlayStatueExtraDialogueSound: m_CurrentExtraDialogueSoundIndex : " + this.m_CurrentExtraDialogueSoundIndex);
+
+                SendCustomEventDelayedSeconds(
+                    nameof(this.PlaySkullExtraDialogueSound),
+                    this.m_StatueSounds[this.m_CurrentExtraDialogueSoundIndex].clip.length + 0.45f
+                );
+            }
+        }
+    }
+
+
+    public AudioSource[] m_SkullSounds;
+    public void PlaySkullExtraDialogueSound()
+    {
+        if (this.m_SkullSounds == null)
+        {
+            Debug.LogError("[QuestManager.cs] PlaySkullExtraDialogueSound: m_SkullSounds is not set");
+            return;
+        }
+
+        if (this.m_CurrentExtraDialogueSoundIndex >= 0 && this.m_CurrentExtraDialogueSoundIndex <= 6)
+        {
+            if (this.m_SkullSounds[this.m_CurrentExtraDialogueSoundIndex] != null)
+            {
+                this.m_SkullSounds[this.m_CurrentExtraDialogueSoundIndex].Play();
+                Debug.Log("[QuestManager.cs] PlaySkullExtraDialogueSound: m_CurrentExtraDialogueSoundIndex: " + this.m_CurrentExtraDialogueSoundIndex);
+
+                this.m_CurrentExtraDialogueSoundIndex = this.m_CurrentExtraDialogueSoundIndex + 1;
+
+                SendCustomEventDelayedSeconds(
+                    nameof(this.PlayStatueExtraDialogueSound),
+                    this.m_SkullSounds[this.m_CurrentExtraDialogueSoundIndex - 1].clip.length + 0.45f
+                );
+            }
+        }
+    }
+
+    public void OnTransition(GameObject newParent)
+    {
+        if (this.m_IsSkullQuestActive)
+        {
+            if (newParent == null)
+            {
+                Debug.LogError("[QuestManager.cs] OnTransition: newParent is null");
+                return;
+            }
+
+            if (newParent.name == "World_GroundFloor_Interior")
+            {
+                if (this.m_StatueNPCObject != null)
+                {
+                    this.m_StatueNPCObject.DisableInteractive = true;
+                }
+            }
+
+            if (newParent.name == "Morgue")
+            {
+
+                if (this.m_CoffinLid == null)
+                {
+                    Debug.LogError("[QuestManager.cs] OnTransition: m_CoffinLid is not set");
+                    return;
+                }
+
+                if (this.m_CoffinLidPickup == null)
+                {
+                    Debug.LogError("[QuestManager.cs] OnTransition: m_CoffinLidPickup is not set");
+                    return;
+                }
+
+                this.m_CoffinLidPickup.pickupable = true;
+
+                if (this.m_SkullGameObject == null)
+                {
+                    Debug.LogError("[QuestManager.cs] OnTransition: m_SkullGameObject is not set");
+                    return;
+                }
+
+                if (this.m_SkullPickup == null)
+                {
+                    Debug.LogError("[QuestManager.cs] OnTransition: m_SkullPickup is not set");
+                    return;
+                }
+
+                this.m_SkullPickup.pickupable = true;
+            }
+        }
+
+        if (this.m_IsReturnSkullQuestActive)
+        {
+
+            if (this.m_HeadlessSkeletonEnranceEffectParticleSystem != null)
+            {
+                this.m_HeadlessSkeletonEnranceEffectParticleSystem.Play();
+                Destroy(this.m_HeadlessSkeletonEnranceEffectParticleSystem);
+            }
+
+            if (this.m_HeadlessSkeletonEntranceEffectGameObject != null)
+            {
+                this.m_HeadlessSkeletonEntranceEffectGameObject.SetActive(false);
+                Destroy(this.m_HeadlessSkeletonEntranceEffectGameObject);
+            }
+
+            if (this.m_HeadlessSkeletonMainGameObject != null)
+            {
+                this.m_HeadlessSkeletonMainGameObject.SetActive(false);
+                Destroy(this.m_HeadlessSkeletonMainGameObject);
+            }
+
+
+            if (this.m_SkullGameObject == null)
+            {
+                Debug.LogError("[QuestManager.cs] OnTransition: m_SkullGameObject is not set");
+                return;
+            }
+
+            if (this.m_SkullPickup == null)
+            {
+                Debug.LogError("[QuestManager.cs] OnTransition: m_SkullPickup is not set");
+                return;
+            }
+
+            if (newParent == null)
+            {
+                Debug.LogError("[QuestManager.cs] OnTransition: newParent is null");
+                return;
+            }
+
+            if (this.m_SkullGameObjectParent == null)
+            {
+                Debug.LogError("[QuestManager.cs] OnTransition: m_SkullGameObjectParent is not set");
+                return;
+            }
+
+            this.m_SkullGameObjectParent.transform.SetParent(newParent.transform, true);
+
+            this.m_SkullGameObjectParent.SetActive(true);
+            this.m_SkullGameObject.SetActive(true);
+            this.m_SkullPickup.pickupable = true;
+            if (!this.m_SkullPickup.IsHeld)
+            {
+                this.m_SkullGameObject.transform.position = Networking.LocalPlayer.GetPosition() + new Vector3(0, 0.5f, 0);
+            }
         }
     }
 }

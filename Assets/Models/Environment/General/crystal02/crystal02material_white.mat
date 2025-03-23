@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: crystal02material_white
   m_Shader: {fileID: 4800000, guid: 0b7113dea2069fc4e8943843eff19f70, type: 3}
-  m_Parent: {fileID: 2100000, guid: 3edec29c81e9172428aec66f9532dd4a, type: 2}
+  m_Parent: {fileID: 2100000, guid: a5329c9e7ca30f544866c75651c53205, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _EMISSION

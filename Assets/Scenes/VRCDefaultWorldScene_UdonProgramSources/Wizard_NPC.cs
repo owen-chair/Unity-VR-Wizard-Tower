@@ -258,9 +258,12 @@ public class Wizard_NPC : NetworkInterface
 
     public DialogueManager dialogueManager;  // Assign in the Inspector
     public bool m_IsConversing = false;
+    public bool m_DisableInteractive = false;
 
     public override void Interact()
     {
+        if (this.m_DisableInteractive) return;
+
         if (dialogueManager != null && !this.m_IsConversing)
         {
             dialogueManager.StartDialogue();

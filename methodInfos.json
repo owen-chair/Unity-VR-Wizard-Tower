@@ -1,63 +1,84 @@
 {
-	"UdonSharp.Examples.Utilities.PlayerModSetter.Start()": {
+	"UdonSharp.Examples.Utilities.MasterToggleObject.Start()": {
 		"methodName": "_start",
 		"parameters": null
 	},
-	"UdonSharp.Examples.Utilities.BoneFollower.Start()": {
-		"methodName": "_start",
-		"parameters": null
+	"UdonSharp.Examples.Utilities.MasterToggleObject.OnOwnershipRequest(VRC.SDKBase.VRCPlayerApi, VRC.SDKBase.VRCPlayerApi)": {
+		"methodName": "_onOwnershipRequest",
+		"parameters": [
+			"onOwnershipRequestRequester",
+			"onOwnershipRequestNewOwner"
+		]
 	},
-	"UdonSharp.Examples.Utilities.BoneFollower.Update()": {
-		"methodName": "_update",
-		"parameters": null
-	},
-	"UdonSharp.Examples.Utilities.InteractToggle.Interact()": {
-		"methodName": "_interact",
-		"parameters": null
-	},
-	"book_mpb.Start()": {
-		"methodName": "_start",
-		"parameters": null
-	},
-	"book_mpb.OnValidate()": {
-		"methodName": "OnValidate",
-		"parameters": null
-	},
-	"book_mpb.ApplyUVOffset()": {
-		"methodName": "ApplyUVOffset",
-		"parameters": null
-	},
-	"Dialogue_Wizard_Jail1.Start()": {
-		"methodName": "_start",
-		"parameters": null
-	},
-	"Dialogue_Wizard_3.Start()": {
-		"methodName": "_start",
-		"parameters": null
-	},
-	"UdonSharp.Examples.Utilities.GlobalToggleObject.Start()": {
-		"methodName": "_start",
-		"parameters": null
-	},
-	"UdonSharp.Examples.Utilities.GlobalToggleObject.OnDeserialization()": {
+	"UdonSharp.Examples.Utilities.MasterToggleObject.OnDeserialization()": {
 		"methodName": "_onDeserialization",
 		"parameters": null
 	},
-	"UdonSharp.Examples.Utilities.GlobalToggleObject.Interact()": {
+	"UdonSharp.Examples.Utilities.MasterToggleObject.Interact()": {
 		"methodName": "_interact",
 		"parameters": null
 	},
-	"UdonSharp.Examples.Utilities.WorldAudioSettings.OnPlayerJoined(VRC.SDKBase.VRCPlayerApi)": {
+	"Miner28.UdonUtils.Network.NetworkManager.Start()": {
+		"methodName": "_start",
+		"parameters": null
+	},
+	"Miner28.UdonUtils.Network.NetworkManager.OnPlayerJoined(VRC.SDKBase.VRCPlayerApi)": {
 		"methodName": "_onPlayerJoined",
 		"parameters": [
 			"onPlayerJoinedPlayer"
 		]
 	},
-	"MainWorldScript.Start()": {
+	"Miner28.UdonUtils.Network.NetworkManager.OnPlayerRestored(VRC.SDKBase.VRCPlayerApi)": {
+		"methodName": "_onPlayerRestored",
+		"parameters": [
+			"onPlayerRestoredPlayer"
+		]
+	},
+	"Miner28.UdonUtils.Network.NetworkManager.BackwardsRegister(Miner28.UdonUtils.Network.NetworkedEventCaller)": {
+		"methodName": "__0_BackwardsRegister",
+		"parameters": [
+			"__0_caller__param"
+		]
+	},
+	"Miner28.UdonUtils.Network.NetworkManager.ToggleNetworking(bool, bool)": {
+		"methodName": "__0_ToggleNetworking",
+		"parameters": [
+			"__0_state__param",
+			"__0_voidEvents__param"
+		]
+	},
+	"Miner28.UdonUtils.Network.NetworkManager.HandlePaused(VRC.SDKBase.VRCPlayerApi, byte[])": {
+		"methodName": "__0_HandlePaused",
+		"parameters": [
+			"__0_sender__param",
+			"__0_data__param"
+		]
+	},
+	"Miner28.UdonUtils.Network.NetworkManager._HandleNetworkResumed()": {
+		"methodName": "_HandleNetworkResumed",
+		"parameters": null
+	},
+	"Miner28.UdonUtils.Network.NetworkManager.Log(object)": {
+		"methodName": "__0_Log",
+		"parameters": [
+			"__0_log__param"
+		]
+	},
+	"Miner28.UdonUtils.Network.NetworkManager.Log(string)": {
+		"methodName": "__1_Log",
+		"parameters": [
+			"__1_log__param"
+		]
+	},
+	"Miner28.UdonUtils.Network.NetworkManager.OnCallerAssigned()": {
+		"methodName": "OnCallerAssigned",
+		"parameters": null
+	},
+	"Dialogue_Statue_1.Start()": {
 		"methodName": "_start",
 		"parameters": null
 	},
-	"Dialogue_Wizard_4.Start()": {
+	"Dialogue_Skull_1.Start()": {
 		"methodName": "_start",
 		"parameters": null
 	},
@@ -91,6 +112,133 @@
 	},
 	"Miner28.UdonUtils.Network.NetworkInterface.OnCallerAssigned()": {
 		"methodName": "OnCallerAssigned",
+		"parameters": null
+	},
+	"UseTeleporter.Start()": {
+		"methodName": "_start",
+		"parameters": null
+	},
+	"UseTeleporter.FindVRCWorldObjectInScene()": {
+		"methodName": "FindVRCWorldObjectInScene",
+		"parameters": null
+	},
+	"UseTeleporter.Interact()": {
+		"methodName": "_interact",
+		"parameters": null
+	},
+	"SkeletonHead.Start()": {
+		"methodName": "_start",
+		"parameters": null
+	},
+	"SkeletonHead.Bless()": {
+		"methodName": "Bless",
+		"parameters": null
+	},
+	"SkeletonHead.Update()": {
+		"methodName": "_update",
+		"parameters": null
+	},
+	"QuestManager.FindVRCWorldObjectInScene()": {
+		"methodName": "FindVRCWorldObjectInScene",
+		"parameters": null
+	},
+	"QuestManager.TeleportTo(UnityEngine.Transform)": {
+		"methodName": "__0_TeleportTo",
+		"parameters": [
+			"__0_transform__param"
+		]
+	},
+	"QuestManager.OnTrigger(string, float)": {
+		"methodName": "__0_OnTrigger",
+		"parameters": [
+			"__0_token__param",
+			"__0_delay__param"
+		]
+	},
+	"QuestManager.TP_TO_JAIL()": {
+		"methodName": "TP_TO_JAIL",
+		"parameters": null
+	},
+	"QuestManager.WALL_SMASH()": {
+		"methodName": "WALL_SMASH",
+		"parameters": null
+	},
+	"QuestManager.DeactivateExpiredParticleSystemExplosionEffect()": {
+		"methodName": "DeactivateExpiredParticleSystemExplosionEffect",
+		"parameters": null
+	},
+	"QuestManager.OnSpellBallExploded()": {
+		"methodName": "OnSpellBallExploded",
+		"parameters": null
+	},
+	"QuestManager.StopRightThere()": {
+		"methodName": "StopRightThere",
+		"parameters": null
+	},
+	"QuestManager.FreePlayer()": {
+		"methodName": "FreePlayer",
+		"parameters": null
+	},
+	"QuestManager.JailWizardLeave()": {
+		"methodName": "JailWizardLeave",
+		"parameters": null
+	},
+	"QuestManager.TestIfJailWizardReachedExit()": {
+		"methodName": "TestIfJailWizardReachedExit",
+		"parameters": null
+	},
+	"QuestManager.CleanupJailQuestObjects()": {
+		"methodName": "CleanupJailQuestObjects",
+		"parameters": null
+	},
+	"QuestManager.OnStartSkullQuest()": {
+		"methodName": "OnStartSkullQuest",
+		"parameters": null
+	},
+	"QuestManager.OnHeadlessSkeletonTriggered()": {
+		"methodName": "OnHeadlessSkeletonTriggered",
+		"parameters": null
+	},
+	"QuestManager.AfterEntranceEffectFinished()": {
+		"methodName": "AfterEntranceEffectFinished",
+		"parameters": null
+	},
+	"QuestManager.BeginReturnSkull()": {
+		"methodName": "BeginReturnSkull",
+		"parameters": null
+	},
+	"QuestManager.OnSkullReturned()": {
+		"methodName": "OnSkullReturned",
+		"parameters": null
+	},
+	"QuestManager.PlayStatueExtraDialogueSound()": {
+		"methodName": "PlayStatueExtraDialogueSound",
+		"parameters": null
+	},
+	"QuestManager.PlaySkullExtraDialogueSound()": {
+		"methodName": "PlaySkullExtraDialogueSound",
+		"parameters": null
+	},
+	"QuestManager.OnTransition(UnityEngine.GameObject)": {
+		"methodName": "__0_OnTransition",
+		"parameters": [
+			"__0_newParent__param"
+		]
+	},
+	"Dialogue_Wizard_2.Start()": {
+		"methodName": "_start",
+		"parameters": null
+	},
+	"MainWorldScript.Start()": {
+		"methodName": "_start",
+		"parameters": null
+	},
+	"UdonSharp.Examples.Utilities.TrackingDataFollower.Start()": {
+		"methodName": "_start",
+		"parameters": null
+	},
+	"UdonSharp.Examples.Utilities.TrackingDataFollower.LateUpdate()": {
+		"methodName": "_lateUpdate",
 		"parameters": null
 	},
 	"Miner28.UdonUtils.Network.NetworkedEventCaller.SendData(uint, uint, uint, VRC.SDK3.Data.DataToken[])": {
@@ -183,6 +331,64 @@
 		"methodName": "__0_LogError",
 		"parameters": [
 			"__2_log__param"
+		]
+	},
+	"old_faucet_interactable.Start()": {
+		"methodName": "_start",
+		"parameters": null
+	},
+	"old_faucet_interactable.Interact()": {
+		"methodName": "_interact",
+		"parameters": null
+	},
+	"old_faucet_interactable.RequestActivate()": {
+		"methodName": "RequestActivate",
+		"parameters": null
+	},
+	"old_faucet_interactable.RequestDeactivate()": {
+		"methodName": "RequestDeactivate",
+		"parameters": null
+	},
+	"old_faucet_interactable.On_ActivateRequestReceived(int)": {
+		"methodName": "__0_On_ActivateRequestReceived",
+		"parameters": [
+			"__0_id__param"
+		]
+	},
+	"old_faucet_interactable.On_DeactivateRequestReceived(int)": {
+		"methodName": "__0_On_DeactivateRequestReceived",
+		"parameters": [
+			"__1_id__param"
+		]
+	},
+	"old_faucet_interactable.Activate()": {
+		"methodName": "Activate",
+		"parameters": null
+	},
+	"old_faucet_interactable.Deactivate()": {
+		"methodName": "Deactivate",
+		"parameters": null
+	},
+	"old_faucet_interactable.Update()": {
+		"methodName": "_update",
+		"parameters": null
+	},
+	"old_faucet_interactable.UpdateLiquid()": {
+		"methodName": "UpdateLiquid",
+		"parameters": null
+	},
+	"old_faucet_interactable.PlayPouringSound()": {
+		"methodName": "PlayPouringSound",
+		"parameters": null
+	},
+	"old_faucet_interactable.StopPouringSound()": {
+		"methodName": "StopPouringSound",
+		"parameters": null
+	},
+	"old_faucet_interactable.SetLiquidPoolScale(float)": {
+		"methodName": "__0_SetLiquidPoolScale",
+		"parameters": [
+			"__0_scale__param"
 		]
 	},
 	"magicbook.Start()": {
@@ -356,100 +562,128 @@
 		"methodName": "_interact",
 		"parameters": null
 	},
-	"Dialogue_Wizard_1.Start()": {
+	"candle_lod.Start()": {
 		"methodName": "_start",
 		"parameters": null
 	},
-	"QuestManager.FindVRCWorldObjectInScene()": {
-		"methodName": "FindVRCWorldObjectInScene",
+	"candle_lod.OnEnable()": {
+		"methodName": "_onEnable",
 		"parameters": null
 	},
-	"QuestManager.TeleportTo(UnityEngine.Transform)": {
-		"methodName": "__0_TeleportTo",
+	"candle_lod.SetDefaultState()": {
+		"methodName": "SetDefaultState",
+		"parameters": null
+	},
+	"candle_lod.OnPlayerTriggerEnter(VRC.SDKBase.VRCPlayerApi)": {
+		"methodName": "_onPlayerTriggerEnter",
 		"parameters": [
-			"__0_transform__param"
+			"onPlayerTriggerEnterPlayer"
 		]
 	},
-	"QuestManager.OnTrigger(string, float)": {
-		"methodName": "__0_OnTrigger",
+	"candle_lod.OnPlayerTriggerExit(VRC.SDKBase.VRCPlayerApi)": {
+		"methodName": "_onPlayerTriggerExit",
 		"parameters": [
-			"__0_token__param",
-			"__0_delay__param"
+			"onPlayerTriggerExitPlayer"
 		]
 	},
-	"QuestManager.TP_TO_JAIL()": {
-		"methodName": "TP_TO_JAIL",
-		"parameters": null
-	},
-	"QuestManager.WALL_SMASH()": {
-		"methodName": "WALL_SMASH",
-		"parameters": null
-	},
-	"QuestManager.DeactivateExpiredParticleSystemExplosionEffect()": {
-		"methodName": "DeactivateExpiredParticleSystemExplosionEffect",
-		"parameters": null
-	},
-	"QuestManager.OnSpellBallExploded()": {
-		"methodName": "OnSpellBallExploded",
-		"parameters": null
-	},
-	"QuestManager.StopRightThere()": {
-		"methodName": "StopRightThere",
-		"parameters": null
-	},
-	"QuestManager.FreePlayer()": {
-		"methodName": "FreePlayer",
-		"parameters": null
-	},
-	"QuestManager.JailWizardLeave()": {
-		"methodName": "JailWizardLeave",
-		"parameters": null
-	},
-	"QuestManager.TestIfJailWizardReachedExit()": {
-		"methodName": "TestIfJailWizardReachedExit",
-		"parameters": null
-	},
-	"QuestManager.CleanupJailQuestObjects()": {
-		"methodName": "CleanupJailQuestObjects",
-		"parameters": null
-	},
-	"UdonSharp.Examples.Utilities.TrackingDataFollower.Start()": {
+	"UdonSharp.Examples.Utilities.BoneFollower.Start()": {
 		"methodName": "_start",
 		"parameters": null
 	},
-	"UdonSharp.Examples.Utilities.TrackingDataFollower.LateUpdate()": {
-		"methodName": "_lateUpdate",
+	"UdonSharp.Examples.Utilities.BoneFollower.Update()": {
+		"methodName": "_update",
 		"parameters": null
 	},
-	"UdonSharp.Examples.Utilities.MasterToggleObject.Start()": {
+	"HeadlessSkeletonTrigger1.Start()": {
 		"methodName": "_start",
 		"parameters": null
 	},
-	"UdonSharp.Examples.Utilities.MasterToggleObject.OnOwnershipRequest(VRC.SDKBase.VRCPlayerApi, VRC.SDKBase.VRCPlayerApi)": {
-		"methodName": "_onOwnershipRequest",
+	"HeadlessSkeletonTrigger1.OnPlayerTriggerEnter(VRC.SDKBase.VRCPlayerApi)": {
+		"methodName": "_onPlayerTriggerEnter",
 		"parameters": [
-			"onOwnershipRequestRequester",
-			"onOwnershipRequestNewOwner"
+			"onPlayerTriggerEnterPlayer"
 		]
 	},
-	"UdonSharp.Examples.Utilities.MasterToggleObject.OnDeserialization()": {
+	"book_mpb.Start()": {
+		"methodName": "_start",
+		"parameters": null
+	},
+	"book_mpb.OnValidate()": {
+		"methodName": "OnValidate",
+		"parameters": null
+	},
+	"book_mpb.ApplyUVOffset()": {
+		"methodName": "ApplyUVOffset",
+		"parameters": null
+	},
+	"SkeletonSpellBall.Start()": {
+		"methodName": "_start",
+		"parameters": null
+	},
+	"SkeletonSpellBall.Update()": {
+		"methodName": "_update",
+		"parameters": null
+	},
+	"SkeletonSpellBall.On_Explode(bool)": {
+		"methodName": "__0_On_Explode",
+		"parameters": [
+			"__0_didHit__param"
+		]
+	},
+	"blessedwater.Start()": {
+		"methodName": "_start",
+		"parameters": null
+	},
+	"blessedwater.OnTriggerEnter(UnityEngine.Collider)": {
+		"methodName": "_onTriggerEnter",
+		"parameters": [
+			"onTriggerEnterOther"
+		]
+	},
+	"Dialogue_Wizard_4.Start()": {
+		"methodName": "_start",
+		"parameters": null
+	},
+	"SkullReturnQuestTrigger.Start()": {
+		"methodName": "_start",
+		"parameters": null
+	},
+	"SkullReturnQuestTrigger.OnTriggerEnter(UnityEngine.Collider)": {
+		"methodName": "_onTriggerEnter",
+		"parameters": [
+			"onTriggerEnterOther"
+		]
+	},
+	"Skeleton_NPC_Script_Part1.Start()": {
+		"methodName": "_start",
+		"parameters": null
+	},
+	"Dialogue_Wizard_3.Start()": {
+		"methodName": "_start",
+		"parameters": null
+	},
+	"Dialogue_Wizard_Jail1.Start()": {
+		"methodName": "_start",
+		"parameters": null
+	},
+	"UdonSharp.Examples.Utilities.InteractToggle.Interact()": {
+		"methodName": "_interact",
+		"parameters": null
+	},
+	"UdonSharp.Examples.Utilities.GlobalToggleObject.Start()": {
+		"methodName": "_start",
+		"parameters": null
+	},
+	"UdonSharp.Examples.Utilities.GlobalToggleObject.OnDeserialization()": {
 		"methodName": "_onDeserialization",
 		"parameters": null
 	},
-	"UdonSharp.Examples.Utilities.MasterToggleObject.Interact()": {
+	"UdonSharp.Examples.Utilities.GlobalToggleObject.Interact()": {
 		"methodName": "_interact",
 		"parameters": null
 	},
-	"UseTeleporter.Start()": {
+	"Dialogue_Wizard_1.Start()": {
 		"methodName": "_start",
-		"parameters": null
-	},
-	"UseTeleporter.FindVRCWorldObjectInScene()": {
-		"methodName": "FindVRCWorldObjectInScene",
-		"parameters": null
-	},
-	"UseTeleporter.Interact()": {
-		"methodName": "_interact",
 		"parameters": null
 	},
 	"OcclusionTrigger.Start()": {
@@ -484,160 +718,14 @@
 			"onPlayerTriggerExitPlayer"
 		]
 	},
-	"Miner28.UdonUtils.Network.NetworkManager.Start()": {
+	"UdonSharp.Examples.Utilities.PlayerModSetter.Start()": {
 		"methodName": "_start",
 		"parameters": null
 	},
-	"Miner28.UdonUtils.Network.NetworkManager.OnPlayerJoined(VRC.SDKBase.VRCPlayerApi)": {
+	"UdonSharp.Examples.Utilities.WorldAudioSettings.OnPlayerJoined(VRC.SDKBase.VRCPlayerApi)": {
 		"methodName": "_onPlayerJoined",
 		"parameters": [
 			"onPlayerJoinedPlayer"
-		]
-	},
-	"Miner28.UdonUtils.Network.NetworkManager.OnPlayerRestored(VRC.SDKBase.VRCPlayerApi)": {
-		"methodName": "_onPlayerRestored",
-		"parameters": [
-			"onPlayerRestoredPlayer"
-		]
-	},
-	"Miner28.UdonUtils.Network.NetworkManager.BackwardsRegister(Miner28.UdonUtils.Network.NetworkedEventCaller)": {
-		"methodName": "__0_BackwardsRegister",
-		"parameters": [
-			"__0_caller__param"
-		]
-	},
-	"Miner28.UdonUtils.Network.NetworkManager.ToggleNetworking(bool, bool)": {
-		"methodName": "__0_ToggleNetworking",
-		"parameters": [
-			"__0_state__param",
-			"__0_voidEvents__param"
-		]
-	},
-	"Miner28.UdonUtils.Network.NetworkManager.HandlePaused(VRC.SDKBase.VRCPlayerApi, byte[])": {
-		"methodName": "__0_HandlePaused",
-		"parameters": [
-			"__0_sender__param",
-			"__0_data__param"
-		]
-	},
-	"Miner28.UdonUtils.Network.NetworkManager._HandleNetworkResumed()": {
-		"methodName": "_HandleNetworkResumed",
-		"parameters": null
-	},
-	"Miner28.UdonUtils.Network.NetworkManager.Log(object)": {
-		"methodName": "__0_Log",
-		"parameters": [
-			"__0_log__param"
-		]
-	},
-	"Miner28.UdonUtils.Network.NetworkManager.Log(string)": {
-		"methodName": "__1_Log",
-		"parameters": [
-			"__1_log__param"
-		]
-	},
-	"Miner28.UdonUtils.Network.NetworkManager.OnCallerAssigned()": {
-		"methodName": "OnCallerAssigned",
-		"parameters": null
-	},
-	"Dialogue_Wizard_2.Start()": {
-		"methodName": "_start",
-		"parameters": null
-	},
-	"candle_lod.Start()": {
-		"methodName": "_start",
-		"parameters": null
-	},
-	"candle_lod.OnEnable()": {
-		"methodName": "_onEnable",
-		"parameters": null
-	},
-	"candle_lod.SetDefaultState()": {
-		"methodName": "SetDefaultState",
-		"parameters": null
-	},
-	"candle_lod.OnPlayerTriggerEnter(VRC.SDKBase.VRCPlayerApi)": {
-		"methodName": "_onPlayerTriggerEnter",
-		"parameters": [
-			"onPlayerTriggerEnterPlayer"
-		]
-	},
-	"candle_lod.OnPlayerTriggerExit(VRC.SDKBase.VRCPlayerApi)": {
-		"methodName": "_onPlayerTriggerExit",
-		"parameters": [
-			"onPlayerTriggerExitPlayer"
-		]
-	},
-	"SkeletonSpellBall.Start()": {
-		"methodName": "_start",
-		"parameters": null
-	},
-	"SkeletonSpellBall.Update()": {
-		"methodName": "_update",
-		"parameters": null
-	},
-	"SkeletonSpellBall.On_Explode(bool)": {
-		"methodName": "__0_On_Explode",
-		"parameters": [
-			"__0_didHit__param"
-		]
-	},
-	"old_faucet_interactable.Start()": {
-		"methodName": "_start",
-		"parameters": null
-	},
-	"old_faucet_interactable.Interact()": {
-		"methodName": "_interact",
-		"parameters": null
-	},
-	"old_faucet_interactable.RequestActivate()": {
-		"methodName": "RequestActivate",
-		"parameters": null
-	},
-	"old_faucet_interactable.RequestDeactivate()": {
-		"methodName": "RequestDeactivate",
-		"parameters": null
-	},
-	"old_faucet_interactable.On_ActivateRequestReceived(int)": {
-		"methodName": "__0_On_ActivateRequestReceived",
-		"parameters": [
-			"__0_id__param"
-		]
-	},
-	"old_faucet_interactable.On_DeactivateRequestReceived(int)": {
-		"methodName": "__0_On_DeactivateRequestReceived",
-		"parameters": [
-			"__1_id__param"
-		]
-	},
-	"old_faucet_interactable.Activate()": {
-		"methodName": "Activate",
-		"parameters": null
-	},
-	"old_faucet_interactable.Deactivate()": {
-		"methodName": "Deactivate",
-		"parameters": null
-	},
-	"old_faucet_interactable.Update()": {
-		"methodName": "_update",
-		"parameters": null
-	},
-	"old_faucet_interactable.UpdateLiquid()": {
-		"methodName": "UpdateLiquid",
-		"parameters": null
-	},
-	"old_faucet_interactable.PlayPouringSound()": {
-		"methodName": "PlayPouringSound",
-		"parameters": null
-	},
-	"old_faucet_interactable.StopPouringSound()": {
-		"methodName": "StopPouringSound",
-		"parameters": null
-	},
-	"old_faucet_interactable.SetLiquidPoolScale(float)": {
-		"methodName": "__0_SetLiquidPoolScale",
-		"parameters": [
-			"__0_scale__param"
 		]
 	},
 	"wine_tankard_interactable.Start()": {
